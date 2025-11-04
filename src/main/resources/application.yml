@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: sample-ws-consumer
+
+logging:
+  level:
+    root: INFO
+    org.novendu: INFO
+  file:
+    name: logs/consumer.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+
+app:
+  ws:
+    url: ws://localhost:8080/ws   # native WebSocket now
+    topic: /topic/events
+
+
+  leader:
+    table: LeaderElection
+    electionId: poc-ws-events-leader-election
+    leaseSeconds: 30
+
+  dynamo:
+    region: us-east-1
+    endpointOverride: http://localhost:4566
