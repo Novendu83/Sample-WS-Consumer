@@ -11,7 +11,9 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
     file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
-
+aws:
+  accessKeyId: test
+  secretAccessKey: test
 app:
   ws:
     url: ws://localhost:8080/ws   # native WebSocket now
@@ -26,3 +28,5 @@ app:
   dynamo:
     region: us-east-1
     endpointOverride: http://localhost:4566
+    accessKey: test
+    secretKey: test
